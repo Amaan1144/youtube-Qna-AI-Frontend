@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { AlertCircle, Loader2, Send, Youtube } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import Markdown from 'react-markdown'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -177,7 +178,7 @@ export function VideoQA() {
               <CardContent className="p-6">
                 <h2 className="text-xl font-semibold mb-4 text-white">Answer</h2>
                 <div className="bg-zinc-900 p-4 rounded-lg border border-zinc-700">
-                  <p className="text-zinc-300">{answer}</p>
+                  <Markdown>{answer}</Markdown>
                 </div>
               </CardContent>
             </Card>
