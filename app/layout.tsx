@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Youtube-QA-AI-Assistant',
+  description: 'Youtube-QA-AI-Assistant',
   generator: 'v0.dev',
 }
 
