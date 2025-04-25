@@ -43,9 +43,11 @@ export function VideoQA() {
       }
 
       const data = await response.json()
-      setDocId(data.doc_id)
-      setVideoTitle(data.title)
-      setIsVideoProcessed(true)
+      setTimeout(()=> {
+        setDocId(data.doc_id)
+        setVideoTitle(data.title)
+        setIsVideoProcessed(true)
+      },2000);
     } catch (error: any) {
       console.error('Error processing video:', error)
       setError(`Failed to process video: ${error.message}`)
