@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { AlertCircle, Loader2, Send, Youtube } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import Markdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -82,7 +82,7 @@ export function VideoQA() {
 
       const data = await response.json()
       // Remove newline characters from the answer
-      setAnswer(data.answer.replace(/\n/g, ' '))
+      setAnswer(data.answer.replace(/\\n/g, '\n').replace(/\r?\n/g, '\n'))
     } catch (error : any) {
       console.error('Error getting answer:', error)
       setError(`Failed to get answer: ${error.message}`)
@@ -177,8 +177,8 @@ export function VideoQA() {
             <Card className="bg-zinc-800 border-zinc-700">
               <CardContent className="p-6">
                 <h2 className="text-xl font-semibold mb-4 text-white">Answer</h2>
-                <div className="bg-zinc-900 p-4 rounded-lg border border-zinc-700">
-                  <Markdown>{answer}</Markdown>
+                <div className="bg-zinc-900 p-4 rounded-lg border border-zinc-700 text-white prose max-w-none">
+                  <ReactMarkdown>{answer}</ReactMarkdown>
                 </div>
               </CardContent>
             </Card>
