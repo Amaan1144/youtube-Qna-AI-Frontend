@@ -10,7 +10,8 @@ export default function Home() {
           </h1>
           <p className="text-zinc-400 max-w-2xl mx-auto">
             Extract insights from any YouTube video. Enter a URL, ask questions, and get AI-powered answers based on the
-            video content.
+            video content. <br />
+            Note: It will process only those videos which has its transcript available.
           </p>
         </header>
 
